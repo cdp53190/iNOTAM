@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // sleep modeの無効化
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
+    
     return YES;
 }
 
@@ -36,6 +40,9 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    NSNotification *notification = [NSNotification notificationWithName:@"expirationDateCheck" object:self userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

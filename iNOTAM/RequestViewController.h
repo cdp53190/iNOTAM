@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RequestViewController.h
 //  iNOTAM
 //
 //  Created by 林 英市 on 2014/12/24.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UIWebViewDelegate, UIPopoverControllerDelegate>
-
+@interface RequestViewController : UIViewController
 
 @end
-
